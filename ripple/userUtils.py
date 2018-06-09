@@ -266,6 +266,20 @@ def calculatePP(userID, gameMode):
 
 	return totalPP
 
+def addModsBonus(x, m, pp):
+	if m & mods.HIDDEN > 0:
+		x *= 1.032
+	if m & mods.FLASHLIGHT > 0 and pp > 100:
+		x *= 3
+	return x
+
+def lengthBonusMultiplier(l):
+    if (l <= 320):
+        return 1
+    if (l >= 30*60):
+        return 30
+    return (l-320)*29.0/(1800-320)+1
+
 def updateAccuracy(userID, gameMode):
 	"""
 	Update accuracy value for userID relative to gameMode in DB
