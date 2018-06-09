@@ -27,7 +27,12 @@ def readableGameMode(gameMode):
 		return "ctb"
 	else:
 		return "mania"
-
+	
+def scoreType(m):
+	r = "1" 
+	if m & mods.SCOREV2 > 0:
+		r = "2"
+	return r
 def readableMods(m):
 	"""
 	Return a string with readable std mods.
@@ -57,4 +62,8 @@ def readableMods(m):
 		r += "SO"
 	if m & mods.TOUCHSCREEN > 0:
 		r += "TD"
+	if m & mods.RELAX > 0:
+		r += "RX"
+	if m & mods.RELAX2 > 0:
+		r += "AP"
 	return r
