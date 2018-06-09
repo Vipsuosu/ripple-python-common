@@ -1,7 +1,7 @@
 from common.constants import mods
 
 
-def isRankable(m):
+def isRankable(m, gameMode = 0):
 	"""
 	Checks if `m` contains unranked mods
 
